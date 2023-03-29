@@ -1,0 +1,29 @@
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
+#slide {
+    height: 500px;
+}
+
+#slide img {
+    height: 500px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.thumbs {
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+}
+
+.thumbs img {
+    max-width: 100%;
+    height: calc(100%/5);
+    object-fit: cover;
+}
