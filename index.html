@@ -14,27 +14,25 @@
     <title>Vue slider</title>
 </head>
 <body>
-    
-    <main>
-        <div class="container controls d-flex flex-column">
-            <button class="prev"><i class="fa fa-arrow-up"></i></button>
-            <button class="next"><i class="fas fa-arrow-down"></i></button>
-        </div>
-        <div class="container d-flex">
-                <div id="slide" class="slide col-9">
-                    <img src="./assets/img/01.webp" alt="" >
-                </div>
-                <div class="thumbs col-3">
-                    <img src="./assets/img/01.webp" alt="">
-                    <img src="./assets/img/02.webp" alt="">
-                    <img src="./assets/img/03.webp" alt="">
-                    <img src="./assets/img/04.webp" alt="">
-                    <img src="./assets/img/05.webp" alt=""> 
+    <div id="app">
+        <main>
+            <div class="container controls d-flex flex-column">
+                <button class="prev" @click="prev"><i class="fa fa-arrow-up"></i></button>
+                <button class="next" @click="next"><i class="fas fa-arrow-down"></i></button>
+            </div>
+            <div class="container d-flex">
+                    <div id="slide" class="slide col-9">
+                        <img :src="carousel.images[activeImage]">
+                    </div>
+                    <div class="thumbs col-3">
+                        <img :class="index === activeImage ? 'active' : ''" :src='image' v-for="(image,index) in carousel.images" @click="changeImage">
+                    </div>
                 </div>
             </div>
-        </div>
-    
-    </main>
+        
+        </main>
+
+    </div>
 
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
