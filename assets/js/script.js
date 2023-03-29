@@ -7,7 +7,6 @@ createApp({
       carousel: {
           images: [
             "./assets/img/01.webp",
-            "./assets/img/01.webp",
             "./assets/img/02.webp",
             "./assets/img/03.webp",
             "./assets/img/04.webp",
@@ -25,8 +24,8 @@ createApp({
         },
         prev() {
             this.activeImage--
-            if (this.activeImage <= 0) {
-                this.activeImage = this.carousel.images.length
+            if (this.activeImage < 0) {
+                this.activeImage = this.carousel.images.length-1 
             }   
         },
         changeImage(index) {
