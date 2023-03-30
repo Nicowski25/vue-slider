@@ -27,3 +27,7 @@
     height: calc(100%/5);
     object-fit: cover;
 }
+
+.active {
+    border: 1px solid black;
+}

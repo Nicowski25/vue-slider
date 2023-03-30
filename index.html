@@ -22,10 +22,12 @@
             </div>
             <div class="container d-flex">
                     <div id="slide" class="slide col-9">
-                        <img :src="carousel.images[activeImage]">
+                        <img :src="slides[activeImage].image"  @mouseenter="stopAutoplay()" @mouseleave="startAutoplay()">
                     </div>
-                    <div class="thumbs col-3">
-                        <img :class="index === activeImage ? 'active' : ''" :src='image' v-for="(image,index) in carousel.images" @click="changeImage">
+                    <div class="col-3">
+                        <div class="thumbs" :class="index === activeImage ? 'active' : ''" v-for="(thumb, index) in slides" @click="changeImage">
+                            <img :src='thumb.image'>
+                        </div>
                     </div>
                 </div>
             </div>
